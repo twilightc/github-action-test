@@ -15,9 +15,6 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
-env:
-  VITE_AUTO_PUBLISH_KEY: ${{ secrets.VITE_OPEN_AI_API_KEY }}
-
 jobs:
   deploy:
     environment:
@@ -30,7 +27,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: 21
+          node-version: 18
           cache: 'npm'
       - name: Install dependencies
         run: npm install
